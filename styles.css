@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #060049;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #2464ee, #3674d8, #363edd, #5c22d1);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #2464ee, #3674d8, #363edd, #5c22d1);
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+#modalRegistro{
+    width: 50%;
+    height: 100%;
+    left: 25%;
+}
+.modal-content{
+    height: 100% !important;
+    background-color: #fefefe !important;
+    position: absolute;
+    top: -115px;
+    
+}
+.form-modal{
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#Registrarbtn{
+    width: 100%;
+}
+
+.mensajes-error{
+    color: red;
+    font-weight: bold;
+    font-size: small;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 0;
+}
+
+body {
+    background-color: #fbfbfb;
+  }
+  @media (min-width: 991.98px) {
+    main {
+      padding-left: 240px;
+    }
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+  }
+  
+  @media (max-width: 991.98px) {
+    .sidebar {
+      width: 100%;
+    }
+  }
+  .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+.list-group-item{
+    transition: 0.2s ease-in-out !important;
+}
+
+#tabla-productosmain{
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transform: scale(0);
+    position: absolute;
+    width: 80%;
+    margin-left: 20px;
+}
+
+#tabla-clientesmain{
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transform: scale(0);
+    position:  absolute;
+    width: 80%;
+    margin-left: 20px;
+
+}
+
+#card-container{
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  transform: scale(0);
+}
+.card-ventas{
+    height: 160px;
+    width: 100%;
+    background: rgb(0, 29, 43);
+    border-radius: 30px;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+.card-ventas>h1{
+    position: relative;
+    color: white;
+    
+}
+.card-ventas>h4{
+    position: relative;
+    color: white;
+    font-size: medium;
+}
+.card-ventas>p{
+    font-size: small;
+    position: relative;
+    color: white;
+    margin-bottom: -1px;
+}
+
+.mas-info{
+    color: white !important;
+    transform: scale(2);
+    position: relative;
+    left: 95%;
+    bottom: 60%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+}
+.mas-info:hover{
+    transform: scale(2.3);
+    transition: 0.3s ease-in-out;
+}
+
+#ModalMoreInfo{
+    background-color:transparent;
+}
+
+.modal-content2 {
+    border-radius: 10px;
+    background-color: #bababa !important;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    transition: 0.5s ease-in;
+}
+.modal-content2 > ul > h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+.modal-content2 > ul{
+    font-family: 'Montserrat', sans-serif;
+
+}
+#addproduct{
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+}
+
+#addclient{
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+#addventa{
+  border-radius: 20px;
+  margin-left: 30px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+#addentrega{
+  border-radius: 20px;
+  margin-left: 40px;
+  margin-top: -100px;
+  transition: 0.5s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0);
+}
+.card-delivery{
+  background-color: #28437c;
+  width: 250px;
+  padding: 10px;
+  height: 360px;
+  border-radius: 30px;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.card-delivery > iframe{
+  border-radius: 30px;
+}
+.card-delivery > h3{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.card-delivery > p{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size:  x-small;
+  margin-bottom: 2px;
+}
+.entregado{
+  color: rgb(0, 255, 0) !important;
+}
+.noentregado{
+  color: rgb(255, 0, 0) !important;
+}
+
+#map-container{
+  margin-top: -20px;
+}
+
+.formregistro{
+  margin-left: 40px;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.formregistro > input{
+  border-radius: 10px;
+  padding: 2px 6px 2px 6px;
+  border: 1px gray solid;
+}
+
+.formregistro2{
+  margin-left: 40px;
+  opacity: 100;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+.formregistro2 > input{
+  border-radius: 10px;
+  padding: 2px 6px 2px 6px;
+  border: 1px gray solid;
+}
+
+.formregistro3{
+  margin-left: 30px;
+  opacity: 100;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 30px;
+  opacity: 100;
+  margin-top: -50px;
+}
+.formregistro3 > input{
+  border-radius: 10px;
+  padding: 2px 6px 2px 6px;
+  border: 1px gray solid;
+}
+.form-venta{
+  padding: 80px;
+}
+#titulo-venta{
+  margin-left: 70px;
+  top: 30px;
+  position: absolute;
+}
+.form-venta{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+#tablaproductosventa {
+  width: 100%;
+}
+.btn-venta{
+  padding: 5px;
+  width: 100%;
+  border-radius: 100px;
+  color: white;
+  background-color: #28437c;
+  border: none;
+}
+#lista-venta{
+  height: 200px;
+}
+#btn-vender{
+  width: 100%;
+}

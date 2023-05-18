@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>eTrack</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+        <script >
+          $(document).ready(function(){
+            if(!localStorage.getItem("id")){
+              window.location.href = "index.html";  
+      
+            } 
+          });
+        </script>
+    </head>
+<body onload="startTime()">
+    <!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+            <br><br>
+            <a href="#" id="reloj-btn"  class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-clock fa-fw me-3"></i><span class="ml-2" id="span-clock">Time</span>
+            </a>
+          <a href="#" id="productos-btn" onclick="btnproductos()" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-box-open fa-fw me-3"></i><span class="ml-2">Productos</span>
+          </a>
+          
+          <a href="#" id="clientes-btn" onclick="btnclientes()"  class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-address-book fa-fw me-3"></i><span class="ml-2"> Clientes</span></a
+          >
+          <a href="#" id="ventas-btn"  onclick="btnventas()" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-money-bill fa-fw me-3"></i><span class="ml-2">Ventas</span></a
+          >
+          <a href="#" id="entregas-btn" onclick="btnentregas()"  class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="far fa-calendar-check fa-fw me-3"></i><span class="ml-2">Entregas</span></a
+          >
+          <a href="#" id="sesion-btn" onclick="cerrarsesion()"  class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-power-off fa-fw me-3"></i><span class="ml-2">Cerrar Sesion</span></a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="img/logo.jpeg"
+            height="80"
+            alt="Logo"
+            loading="lazy"
+          />
+        </a>        
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+    <br>
+    
+    <form class="formregistro" id="registroproducto">
+      <input type="text" id="nombreproducto" name="nombreproducto" placeholder="Nombre producto">
+      <input type="text" id="descripcionproducto" name="descripcionproducto" placeholder="Descripcion producto">
+      <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad">
+      <input type="text" id="precioproducto" name="precioproducto" placeholder="Precio">
+      <button  type="button" id="addproduct" class="btn btn-success" onclick="registroproducto()"><i class='fas fa-plus mr-2'></i> Registrar Producto</button>
+    </form>
+    <table class="table table-bordered" id="tabla-productosmain">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de Producto</th>
+            <th scope="col">Descripción de Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-productos">
+        </tbody>
+      </table>
+
+      
+   
+      <form class="formregistro2" autocomplete="off">
+        <input type="text" id="nombrecliente" name="nombreproducto" placeholder="Nombre Cliente">
+        <input type="text" id="search_input" name="descripcionproducto" placeholder="Direccion">
+        <input type="text" id="numcelcliente" name="cantidad" placeholder="Celular">
+        <input type="text" id="emailcliente" name="precioproducto" placeholder="Email">
+        <input type="text"  hidden id="cpcliente" name="precioproducto">
+        <input type="text"  hidden id="cordlat" >
+        <input type="text"  hidden id="cordalt" >
+
+        <button type="button" id="addclient" class="btn btn-success" onclick="registrocliente()"><i class='fas fa-plus mr-2'></i> Registrar Cliente</button>
+      </form>
+
+      <table class="table table-bordered" id="tabla-clientesmain">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de Cliente</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Email</th>
+            <th scope="col">Codigo Postal</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-clientes">
+        </tbody>
+      </table>
+
+
+      <a href="venta.html"><button id="addventa" class="btn btn-success"><i class='fas fa-plus mr-2'></i>    Crear Venta</button></a>
+ 
+
+      <div class="container" id="card-container">
+            <!-- <div class="card-ventas">
+                <h1>Venta</h1>
+                <h4>Nombre cliente</h4>
+                <p>Fecha</p>
+                <p>Venta total</p>        
+                <i onclick="modalinfo()" class="fa-solid fa-plus mas-info"></i>
+            </div> -->
+      </div>
+
+
+      <a href="entrega.html"><button type="button" id="addentrega" class="btn btn-success"><i class='fas fa-plus mr-2'></i>    Programar Entrega</button></a>
+      <div class="container" id="map-container">
+
+        <!-- <div class="card-delivery">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.492291371422!2d12.4922309!3d41.8902102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1524815927977" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <h3>Entrega #1</h3>
+          <p>Dirección: La Paloma #347, Hacienda del Roble, San Nicolas de los Garza, Nuevo Leon</p>
+          <p>Total: <strong>$2300</strong></p>
+          <p class="entregado"><strong>Entregado</strong></p>
+        </div>
+         -->
+      </div>
+
+      <div id="ModalMoreInfo" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content2">
+          <span style="cursor: pointer;"class="close2" onclick="cerrarmodal()">&times;</span>
+          <ul id="lista-productos">
+            <h3>Lista de productos</h3>
+          
+          </ul>
+        </div>
+      
+      </div>
+
+      
+
+  </main>
+  <!--Main layout-->
+  <script src="main.js"></script>
+  <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANe2lZ6Ie9DLUsAoLxeL9X7MMHtQ7obCQ&libraries=places&callback=initMap">
+      </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eTrack</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="img/logo.jpeg"
+                    style="width: 185px;" alt="logo">
+                    <br>
+                  <h4 class="mt-1 mb-5 pb-1">We are eTrack</h4>
+                </div>
+
+                <form>
+                  <p>Inicio de sesión</p>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="userlogin" class="form-control"
+                      placeholder="Usuario" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="passwordlogin" class="form-control" placeholder="Contraseña" />
+                    <small class="mensajes-error" id="mensaje-loginerror">Usuario no encontrado, favor de revisar tus credenciales.</small>
+                  </div>
+
+                  <div class="text-center pt-1 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" id="btn-login" onclick="EntrarApp()">Entrar</button>
+                  </div>
+                  <div class="text-center pt-1  pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" id="btn-registro" >Registrar</button>
+                  </div>
+              
+                </form>
+                <!-- The Modal -->
+                <div id="modalRegistro" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form class="form-modal">
+                            <div class="form-group">
+                              <label for="UserInput">Usuario</label>
+                              <input type="text" class="form-control" id="UserInput" name="user">
+                            </div>
+                            <div class="form-group">
+                              <label for="passworduser">Password</label>
+                              <input type="password" class="form-control" id="passworduser" name="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameuser">Nombre</label>
+                                <input type="text" class="form-control" id="nameuser" name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidouser">Apellido</label>
+                                <input type="text" class="form-control" id="apellidouser" name="apellido">
+                            </div>
+                            <br>
+                            <label for="form-control">Rol:</label>
+                            <select id="select-rol" class="form-control" name="rol">
+                                <option>Admin</option>
+                                <option>Repartidor</option>
+                              </select>
+                            <br><br>
+                            <button type="button" id="Registrarbtn" class="btn btn-primary" onclick="Registrarse()">Registrar</button>
+                          </form>
+                    </div>
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">Rastrea y maneja los pedidos en tiempo real</h4>
+                <p class="small mb-0">Somos una solución de vanguardia diseñada para revolucionar la forma en que las empresas gestionan sus entregas y rastrean sus pedidos. Con nuestra plataforma intuitiva y fácil de usar, podrás optimizar tus operaciones logísticas y asegurar una experiencia de entrega excepcional para tus clientes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="main.js"></script>
+</body>
+</html>

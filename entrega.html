@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programar Entrega</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="form-venta">
+        <h1 id="titulo-venta"><strong>Programar Entrega</strong></h1>
+    <form class="form-venta">
+        <div class="form-group">
+          <label for="clients-select">Cliente</label>
+          <select class="form-control" id="clients-select" onchange="buscarcliente()">
+            <option></option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="direccioncliente">Direccion de cliente</label>
+            <input type="text" class="form-control" id="direccioncliente">
+          </div>
+
+          <div class="form-group">
+            <label for="cpcliente">Codigo Postal</label>
+            <input type="text" class="form-control" id="cpcliente">
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="cord1" hidden>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="cord2" hidden>
+          </div>
+
+          <div class="form-group">
+            <label for="ventas-select">Venta</label>
+            <select class="form-control" id="ventas-select">
+            </select>
+          </div>
+          <iframe id="mapa-entrega" src="" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <br><br>
+          <button type="button" onclick="programarventa()" id="btn-vender" class="btn btn-primary">Programar Entrega</button>
+
+      </form>
+      <script src="entrega.js"></script>
+      <script 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANe2lZ6Ie9DLUsAoLxeL9X7MMHtQ7obCQ&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>
